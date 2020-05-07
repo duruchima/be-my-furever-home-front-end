@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const allPetsUrl = 'http://localhost:3000/pets'
-    const petContainer = document.getElementById('pet container')
+    const petContainer = document.getElementById('pet-container')
     function getPets(){
         fetch(allPetsUrl)
         .then(response => response.json())
@@ -108,8 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-
-
+    petContainer.addEventListener('click', (e) => {
+      if(e.target.className === 'pet-div'){
+      const dogId = e.target.dataset.id
+      console.log(dogId)
+    }
+    })
 
     getPets()
 }) //closes domcontent loaded
