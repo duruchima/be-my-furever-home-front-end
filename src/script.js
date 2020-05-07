@@ -158,5 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     })
 
+
+
+  document.addEventListener('click', (e) => {
+    if (e.target.className === 'Sign-Up'){
+      console.log('listening to sign')
+    }
+  })
     getPets()
 }) //closes domcontent loaded
