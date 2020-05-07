@@ -108,7 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-
+    function userSignin() {
+      
+    }
 
 
     getPets()
