@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderPets(pet){
         let petDiv = document.createElement('div') //imagecard?
         petDiv.setAttribute('class', 'pet-div')
-        // let petUl = document.createElement('ul')
+        petDiv.dataset.id = pet.id
         let petName = document.createElement('h2')
         let petImg = document.createElement('img')
         petImg.setAttribute('class', 'index-img')
@@ -46,30 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         petDiv.append(petName, petImg, petBio)
         petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
         petContainer.append(petDiv)
-    }//closes out renderPet Function
-    // <div class="image-container">
-    //   <div class="image-card">
-    //     <h2 class="title">Title of image goes here</h2>
-    //     <img src="./assets/image-placeholder.jpg" class="image" />
-    //     <ul class='pet-bio'
-        {/* <ul class="comments">
-          <li>Get rid of these comments</li>
-          <li>And replace them with the real ones</li>
-          <li>From the server</li>
-        </ul> */}
-        {/* <form class="comment-form">
-          <input
-            class="comment-input"
-            type="text"
-            name="comment"
-            placeholder="Add a comment..."
-          />
-          <button class="comment-button" type="submit">Post</button>
-        </form> */}
-    //   </div>
-    // </div>
-
-
-    
+    }
     getPets()
 }) //closes domcontent loaded
