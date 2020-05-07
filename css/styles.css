@@ -62,7 +62,9 @@
     .index-img {
       max-width: 200px;
     }
+    
     .list-item{
-      float: left; clear: left;
+      float: left; 
+      clear: left;
     }
     /* </style>     */
