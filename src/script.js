@@ -34,9 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
-
-        let petLocation = document.createElement('p')
-        petLocation.innerText = `Location: ${pet.petLocation}`
         
         let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
@@ -51,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
-        petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize)
+        petBio.append(petSpecies, petBreed, petAge, petGender, petSize)
         petContainer.append(petDiv)} //closes if statement
     }
 
@@ -75,9 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
         
-        let petLocation = document.createElement('p')
-        petLocation.innerText = `Location: ${pet.petLocation}`
-        
         let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
         
@@ -94,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
-        petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petDrescription)
+        petBio.append(petSpecies, petBreed, petAge, petGender, petSize, petDrescription)
         petContainer.append(petDiv)
       }
     }
@@ -133,10 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   //SHOW PG: PETS TO BE ADOPTED
     petContainer.addEventListener('click', (e) => {
-      console.log(e.target.dataset.adopted)
       const dogId = e.target.dataset.id
       if(e.target.className === 'pet-div' && e.target.dataset.adopted === 'false'){
-        console.log(e.target.dataset.adopted)
         petContainer.innerHTML = ""
       
         fetch(`${allPetsUrl}/${dogId}`)
@@ -189,8 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       document.addEventListener('submit', event => {
         event.preventDefault()
-
-        // console.log(event.target.parentNode.dataset.id )
         let petId = event.target.parentNode.dataset.id
     
         fetch((`${allPetsUrl}/${petId}`), {
@@ -203,8 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })  
       })
     })
-  }
-    
+  } 
 
   function renderPet(pet){
     petContainer.innerHTML = ""
@@ -260,23 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
     petContainer.append(petDiv)
     formButton()
-  }
-
-  function renderSignUp(){
-    petContainer.innerHTML = ""
-    let signUp = document.createElement('form')
-    signUp.setAttribute('class', 'sign-up-form')
-    signUp.innerHTML = 
-`      <label for="new-user">New User form</label>
-    <input name="name" type="text" class="sign-up" id="new-user" placeholder="Enter your name.">
-    <label for="new-username">New Username</label>
-    <input name="username" type="text" class="sign-up" id="new-username" placeholder="Enter username."></input>
-    <label for="location">Location</label>
-    <input name="location" type="text" class="sign-up" id="new-location" placeholder="Enter your city."></input>
-    <button type="submit" class="btn btn-primary">Submit</button>`
-    body.append(signUp)
-    console.log(signUp)
-  }
+  } //closes renderPet
 
   document.addEventListener('click', (e) => {
     if (e.target.className === 'Sign-Up'){
