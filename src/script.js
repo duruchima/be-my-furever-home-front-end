@@ -34,9 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
-
-        let petLocation = document.createElement('p')
-        petLocation.innerText = `Location: ${pet.petLocation}`
         
         let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
@@ -51,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
-        petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize)
+        petBio.append(petSpecies, petBreed, petAge, petGender, petSize)
         petContainer.append(petDiv)} //closes if statement
     }
 
@@ -75,9 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
         
-        let petLocation = document.createElement('p')
-        petLocation.innerText = `Location: ${pet.petLocation}`
-        
         let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
         
@@ -94,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
-        petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petDrescription)
+        petBio.append(petSpecies, petBreed, petAge, petGender, petSize, petDrescription)
         petContainer.append(petDiv)
       }
     }
@@ -183,9 +177,6 @@ function renderPet(pet){
         let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
         
-        let petLocation = document.createElement('p')
-        petLocation.innerText = `Location: ${pet.petLocation}`
-        
         let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
         
@@ -215,7 +206,7 @@ function renderPet(pet){
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
-        petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
+        petBio.append(petSpecies, petBreed, petAge, petGender, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
         petContainer.append(petDiv)
         formButton()
     }
@@ -246,8 +237,6 @@ function renderPet(pet){
       <input name="name" type="text" class="sign-up" id="new-user" placeholder="Enter your name.">
       <label for="new-username">New Username</label>
       <input name="username" type="text" class="sign-up" id="new-username" placeholder="Enter username."></input>
-      <label for="location">Location</label>
-      <input name="location" type="text" class="sign-up" id="new-location" placeholder="Enter your city."></input>
       <button type="submit" class="btn btn-primary">Submit</button>`
       body.append(signUp)
     }

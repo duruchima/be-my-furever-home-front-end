@@ -61,6 +61,7 @@
     } */
     .index-img {
       max-width: 200px;
+      max-height: 200px;
     }
     
     .list-item{
@@ -91,6 +92,9 @@
       margin: 10px;
       /* background-color: lightgrey; */
       background-color: rgba(132, 92, 160, 0.4);
+      display: inline-block;
+     *display: inline;
+      zoom: 1
     }
     /* </style>     */
     
