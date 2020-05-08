@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const allPetsUrl = 'http://localhost:3000/pets'
     const petContainer = document.getElementById('pet-container')
+    const body = document.getElementsByTagName('body')[0]
     function getPets(){
         fetch(allPetsUrl)
         .then(response => response.json())
@@ -158,12 +159,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     })
 
-
+    function renderSignUp(){
+      petContainer.innerHTML = ""
+      let signUp = document.createElement('form')
+      signUp.setAttribute('class', 'sign-up-form')
+      signUp.innerHTML = 
+`      <label for="new-user">New User form</label>
+      <input name="name" type="text" class="sign-up" id="new-user" placeholder="Enter your name.">
+      <label for="new-username">New Username</label>
+      <input name="username" type="text" class="sign-up" id="new-username" placeholder="Enter username."></input>
+      <label for="location">Location</label>
+      <input name="location" type="text" class="sign-up" id="new-location" placeholder="Enter your city."></input>
+      <button type="submit" class="btn btn-primary">Submit</button>`
+      body.append(signUp)
+      console.log(signUp)
+    }
 
   document.addEventListener('click', (e) => {
     if (e.target.className === 'Sign-Up'){
-      console.log('listening to sign')
+      renderSignUp()
     }
   })
     getPets()
 }) //closes domcontent loaded
+
+// <label for="new-quote">New Quote</label>
+{/* <input name="quote" type="text" class="form-control" id="new-quote" placeholder="Learn. Love. Code."> */}
