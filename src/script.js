@@ -306,7 +306,3 @@ function renderPet(pet){
   })
     getPets()
 }) //closes domcontent loaded
-
-// <label for="new-quote">New Quote</label>
-{/* <input name="quote" type="text" class="form-control" id="new-quote" placeholder="Learn. Love. Code."> */}
-
