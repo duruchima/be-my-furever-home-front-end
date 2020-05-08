@@ -20,27 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
         petImg.setAttribute('class', 'index-img')
         petImg.src = pet.imageUrl
 
-        let petBio = document.createElement('ul')
+        let petBio = document.createElement('div')
         petBio.setAttribute('class', 'pet-bio')
 
-        let petBreed = document.createElement('li')
-        petBreed.setAttribute('class', 'list-item')
+        let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
-        
-        let petLocation = document.createElement('li')
+
+        let petLocation = document.createElement('p')
         petLocation.innerText = `Location: ${pet.petLocation}`
-        petLocation.setAttribute('class', 'list-item')
         
-        let petAge = document.createElement('li')
+        let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
         
-        let petSize = document.createElement('li')
+        let petSize = document.createElement('p')
         petSize.innerText = `Size: ${pet.size}`
         
-        let petGender = document.createElement('li')
+        let petGender = document.createElement('p')
         petGender.innerText = `Gender: ${pet.gender}`
         
-        let petSpecies = document.createElement('li')
+        let petSpecies = document.createElement('p')
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
@@ -61,29 +59,27 @@ document.addEventListener('DOMContentLoaded', () => {
         petImg.setAttribute('class', 'index-img')
         petImg.src = pet.imageUrl
 
-        let petBio = document.createElement('ul')
+        let petBio = document.createElement('div')
         petBio.setAttribute('class', 'pet-bio')
-        let petBreed = document.createElement('li')
-        petBreed.setAttribute('class', 'list-item')
+        let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
         
-        let petLocation = document.createElement('li')
+        let petLocation = document.createElement('p')
         petLocation.innerText = `Location: ${pet.petLocation}`
-        petLocation.setAttribute('class', 'list-item')
         
-        let petAge = document.createElement('li')
+        let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
         
-        let petDrescription = document.createElement('li')
+        let petDrescription = document.createElement('p')
         petDrescription.innerText = `Description: ${pet.description}`
         
-        let petSize = document.createElement('li')
+        let petSize = document.createElement('p')
         petSize.innerText = `Size: ${pet.size}`
         
-        let petGender = document.createElement('li')
+        let petGender = document.createElement('p')
         petGender.innerText = `Gender: ${pet.gender}`
         
-        let petSpecies = document.createElement('li')
+        let petSpecies = document.createElement('p')
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
@@ -105,43 +101,41 @@ document.addEventListener('DOMContentLoaded', () => {
         petImg.setAttribute('class', 'index-img')
         petImg.src = pet.imageUrl
 
-        let petBio = document.createElement('ul')
+        let petBio = document.createElement('div')
         petBio.setAttribute('class', 'pet-bio')
 
-        let petBreed = document.createElement('li')
-        petBreed.setAttribute('class', 'list-item')
+        let petBreed = document.createElement('p')
         petBreed.innerText = `Breed: ${pet.breed}`
         
-        let petLocation = document.createElement('li')
+        let petLocation = document.createElement('p')
         petLocation.innerText = `Location: ${pet.petLocation}`
-        petLocation.setAttribute('class', 'list-item')
         
-        let petAge = document.createElement('li')
+        let petAge = document.createElement('p')
         petAge.innerText = `Age: ${pet.age}`
         
-        let petDrescription = document.createElement('li')
+        let petDrescription = document.createElement('p')
         petDrescription.innerText = `Description: ${pet.description}`
         
-        let postedDate = document.createElement('li')
+        let postedDate = document.createElement('p')
         postedDate.innerText = `Available for Adoption Since: ${pet.postedDate}`
         petDiv.dataset.adopted = pet.isAdopted
         
-        let petSize = document.createElement('li')
+        let petSize = document.createElement('p')
         petSize.innerText = `Size: ${pet.size}`
         
-        let petFixed = document.createElement('li')
+        let petFixed = document.createElement('p')
         petFixed.innerText = `Spayed/Neutered: ${pet.spayed_neutered}`
         
-        let petTrained = document.createElement('li')
+        let petTrained = document.createElement('p')
         petTrained.innerText = `House Trained? ${pet.house_trained}`
         
-        let petGender = document.createElement('li')
+        let petGender = document.createElement('p')
         petGender.innerText = `Gender: ${pet.gender}`
         
-        let petColors = document.createElement('li')
+        let petColors = document.createElement('p')
         petColors.innerText = `Color: ${pet.colors}`
         
-        let petSpecies = document.createElement('li')
+        let petSpecies = document.createElement('p')
         petSpecies.innerText = `Species: ${pet.species}`
         
         petDiv.append(petName, petImg, petBio)
