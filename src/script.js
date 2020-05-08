@@ -144,7 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
   //   formBtn.textContent = 'Apply to Adopt Me!'
   //   formBtn.setAttribute('class', 'form-btn')
   // }
-
-
-  getPets()
+    getPets()
 }) //closes domcontent loaded
