@@ -155,20 +155,23 @@ document.addEventListener('DOMContentLoaded', () => {
   
   
   //FORM BUTTON ON PETS TO BE ADOPTED
-  function formButton(pet) {
+  function formButton() {
     const formBtn = document.createElement('button')
     formBtn.textContent = 'Apply to Adopt Me!'
     formBtn.setAttribute('class', 'form-btn')
     formBtn.style.display = 'block'
 
-    petContainer.insertAdjacentElement('afterend', formBtn)
+    petContainer.append(formBtn)
 
     formBtn.addEventListener('click', event => {
-      petContainer.innerHTML = ''
+      
       let body = document.getElementsByTagName('body')[0]
       let formContainer = document.createElement('div')
       formContainer.setAttribute('id', 'form-container')
+      formContainer.dataset.id = event.target.previousElementSibling.dataset.id
       body.append(formContainer)
+      console.log(formContainer.dataset.id)
+      petContainer.innerHTML = ''
 
       let formAdoption = document.createElement('form')
       formAdoption.setAttribute('class', 'adoption-form')
@@ -184,19 +187,24 @@ document.addEventListener('DOMContentLoaded', () => {
       `
       formContainer.append(formAdoption)
 
-      fetch(allPetsUrl, {
-        method: 'PATCH',
-        headers: {
-          'accept': 'application/json',
-          'content-type': 'application/json'
-      },
-        body: JSON.stringify()
+      document.addEventListener('submit', event => {
+        event.preventDefault()
+
+        // console.log(event.target.parentNode.dataset.id )
+        let petId = event.target.parentNode.dataset.id
+    
+        fetch((`${allPetsUrl}/${petId}`), {
+          method: 'PATCH',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json'
+        },
+          body: JSON.stringify({"isAdopted": true})
+        })  
       })
-      .then(resp => resp.json())
-      .then(response => {})
     })
   }
-
+    
 
   function renderPet(pet){
     petContainer.innerHTML = ""
@@ -251,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     petDiv.append(petName, petImg, petBio)
     petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
     petContainer.append(petDiv)
+    formButton()
   }
 
   function renderSignUp(){
