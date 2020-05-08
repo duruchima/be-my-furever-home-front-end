@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formBtn.style.display = 'block'
     console.log(formBtn)
 
-    petContainer.insertAdjacentElement('afterend', formBtn)
+    petContainer.append(formBtn)
   }
 
 function renderPet(pet){
@@ -263,6 +263,10 @@ function renderPet(pet){
       petContainer.innerHTML = ""
       getAdoptedPets()
     }
+    else if (e.target.className === 'for-adoption'){
+    petContainer.innerHTML = ""
+    getPets()
+  }
   })
 
     getPets()
