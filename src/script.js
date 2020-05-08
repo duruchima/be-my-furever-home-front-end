@@ -214,9 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let petBreed = document.createElement('p')
     petBreed.innerText = `Breed: ${pet.breed}`
     
-    let petLocation = document.createElement('p')
-    petLocation.innerText = `Location: ${pet.petLocation}`
-    
     let petAge = document.createElement('p')
     petAge.innerText = `Age: ${pet.age}`
     
@@ -246,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     petSpecies.innerText = `Species: ${pet.species}`
     
     petDiv.append(petName, petImg, petBio)
-    petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
+    petBio.append(petSpecies, petBreed, petAge, petGender, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
     petContainer.append(petDiv)
     formButton()
   } //closes renderPet
