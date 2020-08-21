@@ -170,11 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       formAdoption.innerHTML = `
         <label for="user-adoption">Pet Adoption Form:</label><br>
-        <input name="name" type="text" class="user-input" placeholder="Please enter your name."><br>
-        <input name="contact" type="text" class="user-num" placeholder="Please enter your phone number."><br>
-        <input name="location" type="text" class="user-address" placeholder="Please enter your city."></input><br>
-        <input name="Home Visit" type="text" class="user-availability" placeholder="Please enter the best time for a visit."></input><br>
-        <input name="Previous Owner" type="text" class="previous-owner" placeholder="Have you been a pet owner before?"></input><br>
+        <label>Name:</label><input name="name" type="text" class="user-input" placeholder="Please enter your name."><br>
+        <label>Phone Number:</label><input name="contact" type="text" class="user-num" placeholder="Please enter your phone number."><br>
+        <label>City:</label><input name="location" type="text" class="user-address" placeholder="Please enter your city."></input><br>
+        <label>When can we do a home visit?</label><input name="Home Visit" type="text" class="user-availability" placeholder="Please enter the best time for a visit."></input><br>
+        <label>Have you owned pets?</label><input name="Previous Owner" type="text" class="previous-owner" placeholder="Have you been a pet owner before?"></input><br>
         <button type="submit" class="btn btn-primary">Submit</button>
       `
       formContainer.append(formAdoption)
@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
           body: JSON.stringify({"isAdopted": true})
         })  
+        alert("Congrats on submitting an application! We will contact you shortly!")
       })
     })
   } 
@@ -213,9 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let petBreed = document.createElement('p')
     petBreed.innerText = `Breed: ${pet.breed}`
-    
-    let petLocation = document.createElement('p')
-    petLocation.innerText = `Location: ${pet.petLocation}`
     
     let petAge = document.createElement('p')
     petAge.innerText = `Age: ${pet.age}`
@@ -246,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
     petSpecies.innerText = `Species: ${pet.species}`
     
     petDiv.append(petName, petImg, petBio)
-    petBio.append(petSpecies, petBreed, petAge, petGender, petLocation, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
+    petBio.append(petSpecies, petBreed, petAge, petGender, petSize, petFixed, petTrained, petColors, postedDate, petDrescription)
     petContainer.append(petDiv)
     formButton()
   } //closes renderPet
